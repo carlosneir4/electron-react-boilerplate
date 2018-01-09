@@ -19,7 +19,12 @@ export default {
           cacheDirectory: true
         }
       }
-    }]
+    },
+    {
+      test: /\.tsx?$/,
+      loaders: ['babel-loader', 'ts-loader'],
+      exclude: [/node_modules/, /release/]
+    },]
   },
 
   output: {
@@ -32,7 +37,7 @@ export default {
    * Determine the array of extensions that should be used to resolve modules.
    */
   resolve: {
-    extensions: ['.js', '.jsx', '.json'],
+    extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
     modules: [
       path.join(__dirname, 'app'),
       'node_modules',
