@@ -22,7 +22,7 @@ export default {
     },
     {
       test: /\.tsx?$/,
-      loaders: ['babel-loader', 'ts-loader'],
+      loaders: 'ts-loader?' + JSON.stringify({ignoreDiagnostics:[2345, 2307]}),
       exclude: [/node_modules/, /release/]
     },]
   },
