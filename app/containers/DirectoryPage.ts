@@ -1,6 +1,6 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import Counter from '../components/counter/Counter';
+import Directory from '../components/directory/Directory';
 import * as CounterActions from '../actions/counter';
 
 function mapStateToProps(state) {
@@ -13,4 +13,4 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators<any>(CounterActions, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Counter);
+export default connect(mapStateToProps, mapDispatchToProps)(Directory);

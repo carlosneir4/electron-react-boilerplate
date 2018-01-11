@@ -10,7 +10,7 @@
  *
  * @flow
  */
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, dialog } from 'electron';
 import MenuBuilder from './menu';
 
 let mainWindow = null;
@@ -84,3 +84,14 @@ app.on('ready', async () => {
   const menuBuilder = new MenuBuilder(mainWindow);
   menuBuilder.buildMenu();
 });
+
+exports.selectDirectory = function () {
+  dialog.showOpenDialog(browserWindow, {
+    defaultPath: app.getPath("downloads"),
+    properties: ['openDirectory', 'openFile']
+  }, folder => {
+    if (folder) {
+        browserWindow.webContents.send('directory', object);
+    }
+  });
+}

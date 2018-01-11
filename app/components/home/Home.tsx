@@ -11,8 +11,13 @@ export default class Home extends React.Component<Props, {}> {
     return (
       <div>
         <div className={styles.container} data-tid="container">
-          <h2>Home</h2>
-          <Link to="/counter">to Counter</Link>
+          <h2>Test React Redux</h2>
+          <p>
+            <Link to="/counter">Counter Actions</Link>
+          </p>
+          <p>
+            <Link to="/directory">FS - Directory</Link>
+          </p>
         </div>
       </div>
     );
